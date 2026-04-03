@@ -1,0 +1,37 @@
+
+
+
+
+
+// import { AuthProvider } from '@/contexts/AuthContext';
+// import { RouteGuard } from '@/components/common/RouteGuard';
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      {/*<AuthProvider>*/}
+      {/*<RouteGuard>*/}
+      <IntersectObserver></IntersectObserver>
+      <div class="flex flex-col min-h-screen">
+        {/*<Header></Header>*/}
+        <main class="flex-grow">
+          <Routes>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={route.element}
+            />
+          ))}
+          <Route path="*" element={<Navigate to="/" replace></Route path="*" element={<Navigate to="/" replace>} />
+          </Routes>
+        </main>
+      </div>
+      <Toaster></Toaster>
+      {/*</RouteGuard>*/}
+      {/*</AuthProvider>*/}
+    </Router>
+  );
+};
+
+App;
